@@ -66,9 +66,12 @@ jobs:
   windows:
     name: Windows
     needs: hygiene
-    runs-on: windows-latest
+    runs-on: ${{ matrix.os }}
     strategy:
       matrix:
+        os:
+          - windows-latest
+          - windows-11-arm
         windows-compiler:
           - mingw
           - msvc
