@@ -91739,7 +91739,7 @@ const RunnerEnvironment = _enum(["github-hosted", "self-hosted"]);
 const ARCHITECTURE = (() => {
 	switch (process$2.arch) {
 		case "arm": return "armhf";
-		case "arm64": return "arm64";
+		case "arm64": return process$2.platform === "win32" ? "x86_64" : "arm64";
 		case "riscv64": return "riscv64";
 		case "s390x": return "s390x";
 		case "x64": return "x86_64";

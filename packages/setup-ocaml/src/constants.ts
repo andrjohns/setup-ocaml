@@ -16,7 +16,7 @@ export const ARCHITECTURE = (() => {
       return "armhf";
     }
     case "arm64": {
-      return "arm64";
+      return process.platform === "win32" ? "x86_64" : "arm64";
     }
     case "riscv64": {
       return "riscv64";
